@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Input Produk</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/inputProduk.css" />
+</head>
+<body>
+  <div id="header-placeholder"></div>
+    
+  <div class="container">
+    <h2>Input Produk</h2>
+    <form id="produkForm">
+      <div class="form-group">
+        <label for="nama">Nama Produk:</label>
+        <input type="text" id="nama" placeholder="Nama Produk" required>
+      </div>
+
+      <div class="form-group">
+        <label for="harga">Harga:</label>
+        <input type="number" id="harga" placeholder="Harga" required>
+      </div>
+
+      <div class="form-group">
+        <label for="keterangan">Keterangan:</label>
+        <textarea id="keterangan" placeholder="Keterangan" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="fotoDisplay">Foto Display:</label>
+        <input type="file" id="fotoDisplay" accept="image/*" required>
+        <div id="displayPreview" class="preview-container"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="fotoVideo">Foto/Video Produk:</label>
+        <input type="file" id="fotoVideo" accept="image/*,video/*">
+        <div id="videoPreview" class="preview-container"></div>
+      </div>
+
+      <button type="submit" class="btn-submit">Simpan Produk</button>
+    </form>
+  </div>
+
+  <div id="navbar-placeholder"></div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script src="js/firebase-config.js"></script>
+  
+  <!-- Main Script -->
+  <script src="js/inputProduk.js"></script>
+  
+  <!-- Component Loader -->
+  <script src="js/loadComponents.js"></script>
+
+<!-- Add this right before closing </body> tag -->
+<div id="progressModal" class="modal">
+  <div class="modal-content">
+    <h3>Menyimpan Produk...</h3>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <p id="progressText">Mempersiapkan data...</p>
+  </div>
+</div>  
+</body>
+</html>

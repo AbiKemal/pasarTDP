@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Input Produk</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+    
+  <div class="container">
+    <h2>Input Produk</h2>
+    <form id="produkForm">
+      <div class="form-group">
+        <label for="nama">Nama Produk:</label>
+      </div>
+      
+      <div class="form-group">
+        <input type="text" id="nama" placeholder="Nama Produk" required>
+        </div>
+
+      <div class="form-group">
+        <label for="harga">Harga:</label>
+        </div>
+      <div class="form-group">
+        <input type="number" id="harga" placeholder="Harga" required>
+        </div>
+
+      <div class="form-group">
+        <label for="keterangan">Keterangan:</label>
+        </div>
+      <div class="form-group">
+        <textarea id="keterangan" placeholder="Keterangan" required></textarea>
+        </div>
+
+      <div class="form-group">
+        <label for="fotoDisplay">Foto Display:</label>
+        </div>
+      <div class="form-group">
+        <input type="file" id="fotoDisplay" accept="image/*" required>
+        </div>
+
+      <div class="form-group">
+        <label for="fotoVideo">Foto/Video Produk:</label>
+        </div>
+      <div class="form-group">
+        <input type="file" id="fotoVideo" accept="image/*,video/*" required>
+        </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div id="navbar-placeholder"></div>
+
+  <!-- Load Header -->
+  <script>
+    fetch('components/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      });
+  </script>
+
+  <!-- Load Navbar -->
+  <script>
+    fetch('components/navbar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar-placeholder').innerHTML = html;
+      });
+  </script>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script src="js/firebase-config.js"></script>
+
+  <!-- Script utama -->
+  <script src="js/inputProduk.js"></script>
+</body>
+</html>

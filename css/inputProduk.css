@@ -1,0 +1,125 @@
+/* Form Styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  touch-action: manipulation;
+}
+
+.btn-submit {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background-color: #45a049;
+}
+
+/* Preview container styles */
+.preview-container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.preview-container img,
+.preview-container video {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* Hilangkan hover delay di perangkat sentuh */
+@media (hover: none) {
+  a:hover, button:hover {
+    background-color: inherit;
+  }
+}
+
+/* Mobile specific styles */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .btn-submit {
+    padding: 14px;
+    font-size: 18px;
+  }
+}
+
+/* Progress Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.progress-bar {
+  height: 20px;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Animation */
+@keyframes progressAnimation {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.progress-animate {
+  animation: progressAnimation 2s ease-in-out infinite;
+}

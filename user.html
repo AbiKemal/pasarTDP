@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>User</title>
+
+  <!-- Script defer agar tidak bentrok -->
+  <script src="js/user.js" defer></script>
+  <script src="js/global.js" defer></script>
+
+
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch('components/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      });
+  </script>
+
+  <!-- Konten -->
+   <div class="container">
+  <h2 id="welcome">Memuat data...</h2>
+  <a href="inputProduk.html">Input Produk</a> |
+  <a href="viewProduk.html">Lihat Produk</a> |
+  <a href="#" id="logout-link">Keluar</a>
+  </div>
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('components/navbar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar-placeholder').innerHTML = html;
+      });
+  </script>
+
+</body>
+</html>

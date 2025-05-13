@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>TDP Marketplace - Users</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <script>
+    fetch('components/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      });
+  </script>
+
+  <div class="container">
+  <p id="loginStatus"></p>
+
+  <script>
+    const user = localStorage.getItem("user");
+    const loginStatus = document.getElementById("loginStatus");
+
+    if (user) {
+      loginStatus.innerHTML = `<a href="user.html">Saya</a>`;
+    } else {
+      loginStatus.innerHTML = `<a href="login.html">Sudah punya akun? Login di sini</a>`;
+    }
+  </script>
+    
+    <h1>Daftar Pengguna</h1>
+    <div class="table-container">
+      <table id="users-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Telepon</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data akan diisi oleh JavaScript -->
+        </tbody>
+      </table>
+    </div>
+    <a href="viewUser.html" class="btn-add">Tambah User Baru</a>
+  </div>
+
+  <!-- index.html / viewUser.html -->
+<div id="navbar-placeholder"></div>
+
+<script>
+  fetch('components/navbar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-placeholder').innerHTML = html;
+    });
+</script>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+  
+  <!-- File JavaScript -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/global.js"></script>
+</body>
+</html>

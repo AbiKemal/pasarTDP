@@ -1,0 +1,38 @@
+<!-- www/components/header.html -->
+<div id="top-header" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: #ffffff;
+  display: flex;
+  align-items: center; /* sejajarkan secara vertikal */
+  justify-content: space-between;
+  padding: 0 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 999;
+  font-family: sans-serif;
+">
+
+  <!-- Kolom Search -->
+  <input type="text" placeholder="Cari..." style="
+    flex: 1;
+    max-width: 60%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+  ">
+
+<!-- Ikon Keranjang & Notifikasi -->
+<div style="display: flex; align-items: center; margin-left: 20px;">
+  <a href="keranjang.html" style="font-size: 22px; text-decoration: none; margin-left: 20px;">🛒</a>
+  <a href="notifikasi.html" style="font-size: 22px; text-decoration: none; margin-right: 40px;">🔔</a>
+</div>
+
+
+</div>
+
+<!-- Spacer agar konten tidak tertutup header -->
+<div style="height: 70px;"></div>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah User Baru</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <script>
+    fetch('components/header.html')
+        .then(res => res.text())
+        .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+        });
+    </script>
+
+
+    <div class="container">
+        <h1>Form Tambah User</h1>
+        <form id="userForm">
+            <div class="form-group">
+                <label for="userId">ID User:</label>
+                <input type="text" id="userId" readonly>
+            </div>
+            <div class="form-group">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telepon">Telepon:</label>
+                <input type="tel" id="telepon" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="btn-submit">Simpan</button>
+        </form>
+    </div>
+    
+<!-- index.html / viewUser.html -->
+<div id="navbar-placeholder"></div>
+
+<script>
+  fetch('components/navbar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-placeholder').innerHTML = html;
+    });
+</script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+    
+    <!-- File JavaScript -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/viewUser-script.js"></script>
+    <script src="js/global.js"></script>
+</body>
+</html>
